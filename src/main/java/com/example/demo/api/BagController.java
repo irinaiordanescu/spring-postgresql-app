@@ -39,6 +39,7 @@ public class BagController {
                 .orElse(null);
     }
 
+
     @DeleteMapping(path = "{idBag}")
     public void deletePersonById(@PathVariable("idBag") UUID id) {
         bagService.deleteBagById(id);
