@@ -1,0 +1,29 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: ''
+      MYSQL_USER: ''
+      MYSQL_PASSWORD: ''
+      MYSQL_ROOT_PASSWORD: ''
+    ports:
+      - ''
+    volumes:
+      - my-db:/var/lib/mysql
+# Names our volume
+
+  db-postgres:
+     image: postgres
+     restart: always
+     environment:
+       POSTGRES_USER: postgres
+       POSTGRES_PASSWORD: postgres
+     ports:
+       - ""
+     volumes:
+      - my-db-postgres:/data/postgres
+volumes:
+  my-db:
+  my-db-postgres:
