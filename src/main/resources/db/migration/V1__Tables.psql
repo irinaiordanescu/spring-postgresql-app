@@ -1,0 +1,23 @@
+DROP TABLE IF EXISTS person;
+CREATE TABLE person (
+    idPerson UUID NOT NULL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+DROP TABLE IF EXISTS cart;
+CREATE TABLE cart (
+    idCart UUID NOT NULL PRIMARY KEY,
+    id_person UUID,
+    FOREIGN KEY(id_person) REFERENCES person(idPerson)
+);
+
+DROP TABLE IF EXISTS bag;
+CREATE TABLE bag (
+    idBag UUID NOT NULL PRIMARY KEY,
+    brand VARCHAR(100) NOT NULL,
+    color VARCHAR(100) NOT NULL,
+    price NUMERIC NOT NULL,
+    profitMargin NUMERIC NOT NULL,
+    id_cart UUID,
+    FOREIGN KEY(id_cart) REFERENCES cart(idCart)
+);
