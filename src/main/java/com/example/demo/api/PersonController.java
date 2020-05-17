@@ -45,7 +45,6 @@ public class PersonController {
         personService.updatePersonById(id, nameToUpdate);
     }
 }
-
 //POST add a result from server
 //PUT modifying a result from a server
 //GET retrieving data from server
